@@ -1,0 +1,319 @@
+{
+    "type": "APL",
+    "version": "1.4",
+    "settings": {},
+    "theme": "light",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.2.0"
+        }
+    ],
+    "resources": [],
+    "styles": {
+        "touchA": {
+            "values": [
+                {
+                    "when": "${state.pressed}",
+                    "opacity": 0.5
+                }
+            ]
+        },
+        "touchB": {
+            "values": [
+                {
+                    "when": "${state.pressed}",
+                    "opacity": 0.5
+                }
+            ]
+        }
+    },
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "aplData"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "100%",
+                        "position": "absolute",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "width": "100%",
+                                "height": "25%",
+                                "items": [
+                                    {
+                                        "type": "Frame",
+                                        "width": "100%",
+                                        "height": "100%",
+                                        "backgroundColor": "#efefef",
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "width": "100%",
+                                                        "height": "40%",
+                                                        "paddingLeft": "10dp",
+                                                        "shadowColor": "#232323",
+                                                        "shadowRadius": "10dp",
+                                                        "color": "#efefef",
+                                                        "fontWeight": "bold",
+                                                        "fontSize": "${viewport.width * 0.04}",
+                                                        "text": "第 ${aplData.nowQuestionNum} 問",
+                                                        "textAlignVertical": "center"
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "width": "100%",
+                                                        "height": "60%",
+                                                        "color": "#232323",
+                                                        "fontWeight": "bold",
+                                                        "paddingTop": "10dp",
+                                                        "paddingLeft": "20dp",
+                                                        "fontSize": "${viewport.width * 0.03}",
+                                                        "text": " ${aplData.nowQuestionInfo.questionDt}"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "alignItems": "center",
+                                "justifyContent": "center"
+                            },
+                            {
+                                "type": "Container",
+                                "width": "100%",
+                                "height": "75%",
+                                "direction": "row",
+                                "items": [
+                                    {
+                                        "type": "TouchWrapper",
+                                        "width": "50%",
+                                        "height": "100%",
+                                        "onPress": [
+                                            {
+                                                "type": "SendEvent",
+                                                "arguments": [
+                                                    "A"
+                                                ]
+                                            }
+                                        ],
+                                        "item": [
+                                            {
+                                                "type": "Container",
+                                                "inheritParentState": true,
+                                                "style": "touchA",
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "items": [
+                                                    {
+                                                        "type": "Frame",
+                                                        "width": "100%",
+                                                        "height": "20%",
+                                                        "backgroundColor": "#ac2323",
+                                                        "items": [
+                                                            {
+                                                                "type": "Text",
+                                                                "width": "100%",
+                                                                "height": "100%",
+                                                                "color": "#efefef",
+                                                                "fontSize": "${viewport.height * 0.08}",
+                                                                "text": "A",
+                                                                "textAlignVertical": "center",
+                                                                "textAlign": "center"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Frame",
+                                                        "width": "100%",
+                                                        "height": "80%",
+                                                        "backgroundColor": "#ffcccc",
+                                                        "items": [
+                                                            {
+                                                                "type": "Container",
+                                                                "width": "100%",
+                                                                "height": "100%",
+                                                                "alignItems": "center",
+                                                                "item": [
+                                                                    {
+                                                                        "type": "Image",
+                                                                        "width": "50%",
+                                                                        "height": "100%",
+                                                                        "source": "${aplData.nowQuestionInfo.imageUrlA}"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "TouchWrapper",
+                                        "width": "50%",
+                                        "height": "100%",
+                                        "onPress": [
+                                            {
+                                                "type": "SendEvent",
+                                                "arguments": [
+                                                    "B"
+                                                ]
+                                            }
+                                        ],
+                                        "item": [
+                                            {
+                                                "type": "Container",
+                                                "inheritParentState": true,
+                                                "style": "touchB",
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "items": [
+                                                    {
+                                                        "type": "Frame",
+                                                        "width": "100%",
+                                                        "height": "20%",
+                                                        "backgroundColor": "#2323ac",
+                                                        "items": [
+                                                            {
+                                                                "type": "Text",
+                                                                "width": "100%",
+                                                                "height": "100%",
+                                                                "color": "#efefef",
+                                                                "fontSize": "${viewport.height * 0.08}",
+                                                                "text": "B",
+                                                                "textAlignVertical": "center",
+                                                                "textAlign": "center"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Frame",
+                                                        "inheritParentState": true,
+                                                        "style": "touchB",
+                                                        "width": "100%",
+                                                        "height": "80%",
+                                                        "backgroundColor": "#ccccff",
+                                                        "items": [
+                                                            {
+                                                                "type": "Container",
+                                                                "width": "100%",
+                                                                "height": "100%",
+                                                                "alignItems": "center",
+                                                                "item": [
+                                                                    {
+                                                                        "type": "Image",
+                                                                        "width": "50%",
+                                                                        "height": "100%",
+                                                                        "source": "${aplData.nowQuestionInfo.imageUrlB}"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "100%",
+                        "id": "ScoreLayer",
+                        "opacity":0,
+                        "items": [
+                            {
+                                "type": "Frame",
+                                "width": "100%",
+                                "height": "100%",
+                                "id": "ScoreMask",
+                                "opacity": 0.5,
+                                "backgroundColor": "#222222",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "Container",
+                                "width": "100%",
+                                "height": "100%",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "items": [
+                                    {
+                                        "type": "Frame",
+                                        "width": "80%",
+                                        "height": "80%",
+                                        "backgroundColor": "#efefef",
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "items": [
+                                                    {
+                                                        "type": "Container",
+                                                        "width": "100%",
+                                                        "height": "20%",
+                                                        "items": [
+                                                            {
+                                                                "type": "Text",
+                                                                "fontWeight":"bold",
+                                                                "width": "100%",
+                                                                "height": "100%",
+                                                                "fontSize":"${viewport.height * 0.09}",
+                                                                "text": "結果発表！",
+                                                                "textAlign": "center",
+                                                                "textAlignVertical": "center"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Container",
+                                                        "width": "100%",
+                                                        "height": "80%",
+                                                        "direction":"row",
+                                                        "items": [
+                                                            {
+                                                                "type": "Text",
+                                                                "id":"ResultText",
+                                                                "width": "100%",
+                                                                "height": "100%",
+                                                                "text": "X問中、X問正解でした！",
+                                                                "textAlign": "center",
+                                                                "textAlignVertical": "center"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

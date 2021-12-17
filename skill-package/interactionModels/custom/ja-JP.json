@@ -1,0 +1,228 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "クイズボックス",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "GameStartIntent",
+          "slots": [],
+          "samples": [
+            "はじめ",
+            "はじめる",
+            "始めます",
+            "ゲーム開始",
+            "ゲームスタート",
+            "始める",
+            "スタート",
+            "開始"
+          ]
+        },
+        {
+          "name": "AnswerAIntent",
+          "slots": [],
+          "samples": [
+            "Aだと思う",
+            "えーだと思う",
+            "エーだと思う",
+            "Aかな",
+            "えーかな",
+            "エーかな",
+            "Aです",
+            "えーです",
+            "エーです",
+            "A",
+            "えー",
+            "エー"
+          ]
+        },
+        {
+          "name": "AnswerBIntent",
+          "slots": [],
+          "samples": [
+            "Bだと思う",
+            "びーだと思う",
+            "ビーだと思う",
+            "Bかな",
+            "びーかな",
+            "ビーかな",
+            "Bです",
+            "びーです",
+            "ビーです",
+            "びい",
+            "B",
+            "びー",
+            "ビー"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+            "おけ",
+            "もう一回やる",
+            "もう一回",
+            "やる",
+            "おう",
+            "うん"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+            "やりたくない",
+            "やんない",
+            "やらない"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "二十五"
+              }
+            },
+            {
+              "name": {
+                "value": "二十四"
+              }
+            },
+            {
+              "name": {
+                "value": "二十三"
+              }
+            },
+            {
+              "name": {
+                "value": "二十二"
+              }
+            },
+            {
+              "name": {
+                "value": "二十一"
+              }
+            },
+            {
+              "name": {
+                "value": "二十"
+              }
+            },
+            {
+              "name": {
+                "value": "十九"
+              }
+            },
+            {
+              "name": {
+                "value": "十八"
+              }
+            },
+            {
+              "name": {
+                "value": "十七"
+              }
+            },
+            {
+              "name": {
+                "value": "十六"
+              }
+            },
+            {
+              "name": {
+                "value": "十五"
+              }
+            },
+            {
+              "name": {
+                "value": "十四"
+              }
+            },
+            {
+              "name": {
+                "value": "十三"
+              }
+            },
+            {
+              "name": {
+                "value": "十二"
+              }
+            },
+            {
+              "name": {
+                "value": "十一"
+              }
+            },
+            {
+              "name": {
+                "value": "十"
+              }
+            },
+            {
+              "name": {
+                "value": "九"
+              }
+            },
+            {
+              "name": {
+                "value": "八"
+              }
+            },
+            {
+              "name": {
+                "value": "七"
+              }
+            },
+            {
+              "name": {
+                "value": "六"
+              }
+            },
+            {
+              "name": {
+                "value": "五"
+              }
+            },
+            {
+              "name": {
+                "value": "四"
+              }
+            },
+            {
+              "name": {
+                "value": "三"
+              }
+            },
+            {
+              "name": {
+                "value": "二"
+              }
+            },
+            {
+              "name": {
+                "value": "一"
+              }
+            }
+          ],
+          "name": "numberType"
+        }
+      ]
+    }
+  },
+  "version": "7"
+}

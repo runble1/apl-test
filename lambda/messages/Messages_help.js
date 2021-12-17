@@ -1,0 +1,37 @@
+'use strict';
+module.exports = {
+    "Description":{
+        "CODE":"メッセージのユニーク値",
+        "VALUE":"メッセージ文言。SSML利用可能。"
+    },
+    "messages":[
+        {
+            "CODE":"HELP_01",
+            "VALUE":"スキルについて説明します。"
+        },
+        {
+            "CODE":"HELP_02",
+            "VALUE":"このスキルでは、さまざまな二択のクイズを出題します。"
+        },
+        {
+            "CODE":"HELP_03",
+            "VALUE":"出題されたクイズに対し、エーかビーかで回答して言ってください。"
+        },
+        {
+            "CODE":"HELP_04",
+            "VALUE":"全問正解を目指して、がんばりましょう！"
+        },
+        {
+            "CODE":"HELP_05",
+            "VALUE":"説明は以上です。"
+        },
+        {
+            "CODE":"HELP_06",
+            "VALUE":"では、次は何をしますか？"
+        },
+        {
+            "CODE":"HELP_RT_01",
+            "VALUE":"次は何をしますか？"
+        }
+    ]
+}

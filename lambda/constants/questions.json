@@ -1,0 +1,27 @@
+{
+    "description":"questionsには、以下の通りセットする。　question→問題文、imageUrlA,imageUrlB→表示する画像のURL、correct→正解の選択肢",
+    "questions":[
+        {
+            "questionDt":"次のうち、犬はどっち？",
+            "questionSt":"次のうち、犬はどっち？",
+            "imageUrlA":"https://iga-lab.s3-ap-northeast-1.amazonaws.com/QuizBox/images/dog.png",
+            "imageUrlB":"https://iga-lab.s3-ap-northeast-1.amazonaws.com/QuizBox/images/cat.png",
+            "correct":"A"
+        },
+        {
+            "questionDt":"次のうち、京都はどっち？",
+            "questionSt":"次のうち、京都はどっち？",
+            "imageUrlA":"https://iga-lab.s3-ap-northeast-1.amazonaws.com/QuizBox/images/kamakura.jpg",
+            "imageUrlB":"https://iga-lab.s3-ap-northeast-1.amazonaws.com/QuizBox/images/kyoto.jpg",
+            "correct":"B"
+        },
+        
+        {
+            "questionDt":"次のうち、爬虫類はどっち？",
+            "questionSt":"次のうち、爬虫類はどっち？",
+            "imageUrlA":"https://iga-lab.s3-ap-northeast-1.amazonaws.com/QuizBox/images/kaeru.png",
+            "imageUrlB":"https://iga-lab.s3-ap-northeast-1.amazonaws.com/QuizBox/images/kame.png",
+            "correct":"B"
+        }
+    ]
+}

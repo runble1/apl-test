@@ -1,0 +1,237 @@
+{
+    "type": "APL",
+    "version": "1.4",
+    "settings": {},
+    "theme": "light",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.2.0"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [
+        {
+            "type": "AnimateItem",
+            "easing": "ease-in-out",
+            "duration": 1000,
+            "componentId": "titleContainer",
+            "value": [
+                {
+                    "property": "opacity",
+                    "to": 1
+                },
+                {
+                    "property": "transform",
+                    "from": [
+                        {
+                            "translateY": 10
+                        }
+                    ],
+                    "to": [
+                        {
+                            "translateY": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Parallel",
+            "commands": [
+                {
+                    "type": "AnimateItem",
+                    "easing": "ease-in-out",
+                    "duration": 1000,
+                    "delay": 0,
+                    "componentId": "startButton",
+                    "value": [
+                        {
+                            "property": "transform",
+                            "from": [
+                                {
+                                    "translateX": "${viewport.width}"
+                                }
+                            ],
+                            "to": [
+                                {
+                                    "translateX": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "AnimateItem",
+                    "easing": "ease-in-out",
+                    "duration": 1000,
+                    "delay": 200,
+                    "componentId": "helpButton",
+                    "value": [
+                        {
+                            "property": "transform",
+                            "from": [
+                                {
+                                    "translateX": "${viewport.width}"
+                                }
+                            ],
+                            "to": [
+                                {
+                                    "translateX": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "graphics": {},
+    "commands": {},
+    "layouts": {
+        "MyButton":{
+            "parameters":[
+                "id",
+                "buttonText",
+                "sendArgumentText"
+            ],
+            "items":[
+                {
+                    "type": "Container",
+                    "id": "${id}",
+                    "transform": [
+                        {
+                            "translateX": "${viewport.width}"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "type": "AlexaButton",
+                            "theme": "light",
+                            "buttonText": "${buttonText}",
+                            "primaryAction": [
+                                {
+                                    "type": "SendEvent",
+                                    "arguments": [
+                                        "${sendArgumentText}"
+                                    ]
+                                }
+                            ],
+                            "buttonStyle": "ingress"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "mainTemplate": {
+        "parameters": [
+            "aplData"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "100%",
+                        "direction": "row",
+                        "items": [
+                            {
+                                "type": "Frame",
+                                "width": "50%",
+                                "height": "100%",
+                                "backgroundColor": "#ffcccc"
+                            },
+                            {
+                                "type": "Frame",
+                                "width": "50%",
+                                "height": "100%",
+                                "backgroundColor": "#ccccff"
+                            }
+                        ],
+                        "position": "absolute"
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "60%",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "id": "titleContainer",
+                                "width": "80%",
+                                "height": "80%",
+                                "opacity": 0,
+                                "items": [
+                                    {
+                                        "type": "Frame",
+                                        "width": "100%",
+                                        "height": "100%",
+                                        "backgroundColor": "#cccccc",
+                                        "borderRadius": 10,
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "width": "100%",
+                                                        "height": "50%",
+                                                        "shadowColor": "#555555",
+                                                        "shadowRadius": "20dp",
+                                                        "color": "#efefef",
+                                                        "fontWeight": "bold",
+                                                        "fontSize": "${viewport.width * 0.06}",
+                                                        "text": "${aplData.skillName}",
+                                                        "textAlign": "center",
+                                                        "textAlignVertical": "center"
+                                                    },
+                                                    {
+                                                        "type": "Image",
+                                                        "width": "100%",
+                                                        "height": "50%",
+                                                        "source": "${aplData.skillImageUrl}"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "alignItems": "center",
+                        "justifyContent": "center"
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "40%",
+                        "items": [
+                            {
+                                "type": "MyButton",
+                                "id": "startButton",
+                                "buttonText": "スタート",
+                                "sendArgumentText":"GAMESTART"
+                            },
+                            {
+                                "type": "MyButton",
+                                "id": "helpButton",
+                                "buttonText": "遊び方",
+                                "sendArgumentText":"HELP"
+                            }
+                        ],
+                        "alignItems": "center",
+                        "justifyContent": "center"
+                    }
+                ]
+            }
+        ]
+    }
+}

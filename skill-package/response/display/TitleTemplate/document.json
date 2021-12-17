@@ -1,0 +1,136 @@
+{
+    "type": "APL",
+    "version": "1.4",
+    "settings": {},
+    "theme": "light",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.2.0"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "aplData"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "100%",
+                        "direction": "row",
+                        "items": [
+                            {
+                                "type": "Frame",
+                                "width": "50%",
+                                "height": "100%",
+                                "backgroundColor": "#ffcccc"
+                            },
+                            {
+                                "type": "Frame",
+                                "width": "50%",
+                                "height": "100%",
+                                "backgroundColor": "#ccccff"
+                            }
+                        ],
+                        "position": "absolute"
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "60%",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "width": "80%",
+                                "height": "80%",
+                                "items": [
+                                    {
+                                        "type": "Frame",
+                                        "width": "100%",
+                                        "height": "100%",
+                                        "backgroundColor": "#cccccc",
+                                        "borderRadius": 10,
+                                        "items": [
+                                            {
+                                                "type": "Text",
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "shadowColor": "#555555",
+                                                "shadowRadius": "20dp",
+                                                "color": "#efefef",
+                                                "fontWeight": "bold",
+                                                "fontSize": "${viewport.width * 0.08}",
+                                                "text": "${aplData.skillName}",
+                                                "textAlign": "center",
+                                                "textAlignVertical": "center"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "alignItems": "center",
+                        "justifyContent": "center"
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "40%",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "items": [
+                                    {
+                                        "type": "AlexaButton",
+                                        "theme": "light",
+                                        "buttonText": "スタート",
+                                        "primaryAction": [
+                                            {
+                                                "type": "SendEvent",
+                                                "arguments": [
+                                                    "GAMESTART"
+                                                ]
+                                            }
+                                        ],
+                                        "buttonStyle": "ingress"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "item": {
+                                    "type": "AlexaButton",
+                                    "theme": "light",
+                                    "buttonText": "遊び方",
+                                    "primaryAction": [
+                                        {
+                                            "type": "SendEvent",
+                                            "arguments": [
+                                                "HELP"
+                                            ]
+                                        }
+                                    ],
+                                    "buttonStyle": "ingress"
+                                }
+                            }
+                        ],
+                        "alignItems": "center",
+                        "justifyContent": "center"
+                    }
+                ]
+            }
+        ]
+    }
+}
